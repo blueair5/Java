@@ -38,7 +38,7 @@ public class ThreadPoolC2D2 {
         // 上面的例子是没有返回值的情况
         Future<?> resultA = POOL_EXECUTOR.submit(ThreadPoolC2D2::methodString);
 
-        // get() 会阻塞，等待结果
+        // get() 会阻塞，等待结果, 在阻塞的过程中，main 就不能看其他的事情了
         System.out.println(resultA.get());
 
     }
