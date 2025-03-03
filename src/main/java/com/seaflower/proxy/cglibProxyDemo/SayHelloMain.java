@@ -8,7 +8,8 @@ public class SayHelloMain {
          * 可以添加以下的 jvm 参数：
          * --add-opens java.base/java.lang=ALL-UNNAMED
          */
-        SayHelloService sayHelloService = (SayHelloService) CglibProxyFactory.getProxy(SayHelloService.class);
+        SayHelloService sayHelloService =
+                (SayHelloService) CglibProxyFactory.getProxy(SayHelloService.class, SayHelloInceptor::new);
         sayHelloService.sayHello();
 
     }

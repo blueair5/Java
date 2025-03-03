@@ -5,7 +5,8 @@ public class JdkProxyTest {
         // 目标对象
         IntroducationService target = new IntroducationService();
         // 获取代理对象
-        IntruducationInterface proxy = (IntruducationInterface) JdkProxyFactory.getProxy(target);
+        IntruducationInterface proxy =
+                (IntruducationInterface) JdkProxyFactory.getProxy(target, IntroducationInvocationHandler::new);
         // 执行代理对象的方法
         proxy.sayHi();
     }
